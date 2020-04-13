@@ -6,21 +6,17 @@ const Test = styled.div`
   background: pink;
 `;
 
-const App = () => (
+const App: React.FC = () => (
   <Test>
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>
         Edit
-        {' '}
-        <code>
-          src/App.tsx
-        </code>
-        {' '}
+        <code> src/App.tsx</code>
         and save to reload.
       </p>
       <a
-        className="App-link"
+        className="App-link dupa jasi kjsdflkjs asd"
         href="https://reactjs.org"
         target="_blank"
         rel="noopener noreferrer"

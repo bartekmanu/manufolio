@@ -4,7 +4,6 @@ import { GlobalStyle } from './styles';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />

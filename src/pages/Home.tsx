@@ -1,17 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const Test = styled.div`
   background: pink;
+  height: 200vh;
 `;
 
 const Home: React.FC = () => {
-  const element = <FontAwesomeIcon icon={faHome} />;
   return (
     <Test>
-      <h1>{element}</h1>
+      <h1>HOME</h1>
     </Test>
   );
 };

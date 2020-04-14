@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const Test = styled.div`
-  background: pink;
+  /* background: pink; */
+  height: 200vh;
 `;
 
 const Home: React.FC = () => {

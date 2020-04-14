@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faTools, faEye, faEnvelope, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import Logo from './components/Logo';
+import { VARIABLES } from './styles/const';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -14,7 +15,7 @@ import Contact from './pages/Contact';
 
 const MainPageWrapper = styled.div`
   display: flex;
-  background: linear-gradient(to right, #2b2b2b 0%, #000000 100%);
+  background: linear-gradient(to right, var(--main-bg-color) 0%, var(--secondary-bg-color) 100%);
 `;
 
 const SideBar = styled.div`
@@ -24,11 +25,9 @@ const SideBar = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: #2b2b2b;
-  box-shadow: inset 0px 4px 30px rgba(0, 0, 0, 0.25);
-  width: 100px;
+  box-shadow: inset 0px 4px 30px var(--side-bar-shadow);
+  width: ${VARIABLES.sideBarWidth}rem;
   height: 100vh;
-  padding: 0.5rem 0 0 0;
 `;
 
 const MenuItems = styled.ul`
@@ -37,7 +36,7 @@ const MenuItems = styled.ul`
     text-align: center;
 
     a {
-      color: #fbbc0c;
+      color: var(--main-color);
     }
   }
 `;
@@ -48,7 +47,7 @@ const SocialListItems = styled.ul`
     text-align: center;
 
     a {
-      color: #4a4a4a;
+      color: var(--secondary-font-color);
     }
   }
 `;
@@ -69,7 +68,11 @@ const App: React.FC = () => {
     <Router>
       <MainPageWrapper>
         <SideBar>
-          <Logo />
+          <nav>
+            <Link to="/">
+              <Logo />
+            </Link>
+          </nav>
           <nav>
             <MenuItems>
               <li>

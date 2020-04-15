@@ -1,14 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Test = styled.div`
-  background: green;
-`;
+// import styled from 'styled-components';
+import PageTitle from '../components/typography/PageTitle';
 
 const About: React.FC = () => (
-  <Test>
-    <h1>ABOUT</h1>
-  </Test>
+  <>
+    <PageTitle text="About" />
+    {/* TODO: */}
+    <p>Content</p>
+  </>
 );
 
 export default About;

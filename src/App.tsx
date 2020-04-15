@@ -53,6 +53,13 @@ const SocialListItems = styled.ul`
   }
 `;
 
+const SectionWrapper = styled.div`
+  height: 100%;
+  padding: 0 0 0 3rem;
+  display: flex;
+  flex-direction: column;
+`;
+
 const App: React.FC = () => {
   const renderMenuItems = (): JSX.Element[] => {
     return pages.map((item) => {
@@ -104,19 +111,29 @@ const App: React.FC = () => {
         <PageWrapper>
           <Switch>
             <Route path="/contact">
-              <Contact />
+              <SectionWrapper>
+                <Contact />
+              </SectionWrapper>
             </Route>
             <Route path="/my-work">
-              <MyWork />
+              <SectionWrapper>
+                <MyWork />
+              </SectionWrapper>
             </Route>
             <Route path="/skills">
-              <Skills />
+              <SectionWrapper>
+                <Skills />
+              </SectionWrapper>
             </Route>
             <Route path="/about">
-              <About />
+              <SectionWrapper>
+                <About />
+              </SectionWrapper>
             </Route>
             <Route path="/">
-              <Home />
+              <SectionWrapper>
+                <Home />
+              </SectionWrapper>
             </Route>
           </Switch>
         </PageWrapper>

@@ -1,14 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
+import PageTitle from '../components/typography/PageTitle';
 
-const Test = styled.div`
-  background: purple;
-`;
-
-const Skills: React.FC = () => (
-  <Test>
-    <h1>SKILLS</h1>
-  </Test>
-);
+const Skills: React.FC = () => <PageTitle text="Skills" />;
 
 export default Skills;

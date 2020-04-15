@@ -1,11 +1,11 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faTools, faEye, faEnvelope, faDownload } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import Logo from './components/Logo';
 import { VARIABLES } from './styles/const';
+import { pages, socials } from './utils/menu-data';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -53,34 +53,6 @@ const SocialListItems = styled.ul`
 `;
 
 const App: React.FC = () => {
-  interface MenuItems {
-    icon: ReactElement;
-    address: string;
-  }
-
-  const pages: MenuItems[] = [
-    {
-      icon: <FontAwesomeIcon icon={faHome} size="2x" />,
-      address: '/',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faUser} size="2x" />,
-      address: '/about',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faTools} size="2x" />,
-      address: '/skills',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faEye} size="2x" />,
-      address: '/my-work',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faEnvelope} size="2x" />,
-      address: '/contact',
-    },
-  ];
-
   const renderMenuItems = (): JSX.Element[] => {
     return pages.map((item) => {
       return (
@@ -90,21 +62,6 @@ const App: React.FC = () => {
       );
     });
   };
-
-  const socials: MenuItems[] = [
-    {
-      address: 'https://github.com/bartekmanu',
-      icon: <FontAwesomeIcon icon={faGithub} size="1x" />,
-    },
-    {
-      address: 'https://www.linkedin.com/in/bartosz-manowski/',
-      icon: <FontAwesomeIcon icon={faLinkedin} size="1x" />,
-    },
-    {
-      address: 'https://www.facebook.com/czaszkobij',
-      icon: <FontAwesomeIcon icon={faFacebook} size="1x" />,
-    },
-  ];
 
   const renderSocials = (): JSX.Element[] => {
     return socials.map((item) => {

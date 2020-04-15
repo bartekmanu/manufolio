@@ -53,31 +53,31 @@ const SocialListItems = styled.ul`
 `;
 
 const App: React.FC = () => {
-  type Pages = {
+  interface MenuItems {
     icon: ReactElement;
-    route: string;
-  };
+    address: string;
+  }
 
-  const pages: Pages[] = [
+  const pages: MenuItems[] = [
     {
       icon: <FontAwesomeIcon icon={faHome} size="2x" />,
-      route: '/',
+      address: '/',
     },
     {
       icon: <FontAwesomeIcon icon={faUser} size="2x" />,
-      route: '/about',
+      address: '/about',
     },
     {
       icon: <FontAwesomeIcon icon={faTools} size="2x" />,
-      route: '/skills',
+      address: '/skills',
     },
     {
       icon: <FontAwesomeIcon icon={faEye} size="2x" />,
-      route: '/my-work',
+      address: '/my-work',
     },
     {
       icon: <FontAwesomeIcon icon={faEnvelope} size="2x" />,
-      route: '/contact',
+      address: '/contact',
     },
   ];
 
@@ -85,16 +85,38 @@ const App: React.FC = () => {
     return pages.map((item) => {
       return (
         <li>
-          <Link to={item.route}>{item.icon}</Link>
+          <Link to={item.address}>{item.icon}</Link>
         </li>
       );
     });
   };
 
-  const gitHubProject = <FontAwesomeIcon icon={faGithub} size="1x" />;
+  const socials: MenuItems[] = [
+    {
+      address: 'https://github.com/bartekmanu',
+      icon: <FontAwesomeIcon icon={faGithub} size="1x" />,
+    },
+    {
+      address: 'https://www.linkedin.com/in/bartosz-manowski/',
+      icon: <FontAwesomeIcon icon={faLinkedin} size="1x" />,
+    },
+    {
+      address: 'https://www.facebook.com/czaszkobij',
+      icon: <FontAwesomeIcon icon={faFacebook} size="1x" />,
+    },
+  ];
+
+  const renderSocials = (): JSX.Element[] => {
+    return socials.map((item) => {
+      return (
+        <li>
+          <a href={item.address}>{item.icon}</a>
+        </li>
+      );
+    });
+  };
+
   const downloadCv = <FontAwesomeIcon icon={faDownload} size="1x" />;
-  const facebook = <FontAwesomeIcon icon={faFacebook} size="1x" />;
-  const linkedin = <FontAwesomeIcon icon={faLinkedin} size="1x" />;
 
   return (
     <Router>
@@ -115,21 +137,7 @@ const App: React.FC = () => {
                 {downloadCv}
               </a>
             </li>
-            <li>
-              <a href="https://github.com/bartekmanu" target="_blank" rel="noopener noreferrer">
-                {gitHubProject}
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/bartosz-manowski/" target="_blank" rel="noopener noreferrer">
-                {linkedin}
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/czaszkobij" target="_blank" rel="noopener noreferrer">
-                {facebook}
-              </a>
-            </li>
+            {renderSocials()}
           </SocialListItems>
         </SideBar>
 

@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import Logo from './components/Logo';
 import { VARIABLES } from './styles/const';
+import Logo from './components/Logo';
 import { pages, socials } from './utils/menu-data';
+import PageWrapper from './components/PageWrapper';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -67,7 +68,9 @@ const App: React.FC = () => {
     return socials.map((item) => {
       return (
         <li>
-          <a href={item.address}>{item.icon}</a>
+          <a href={item.address} target="_blank" rel="noopener noreferrer">
+            {item.icon}
+          </a>
         </li>
       );
     });
@@ -98,23 +101,25 @@ const App: React.FC = () => {
           </SocialListItems>
         </SideBar>
 
-        <Switch>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/my-work">
-            <MyWork />
-          </Route>
-          <Route path="/skills">
-            <Skills />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <PageWrapper>
+          <Switch>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/my-work">
+              <MyWork />
+            </Route>
+            <Route path="/skills">
+              <Skills />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </PageWrapper>
       </MainPageWrapper>
     </Router>
   );

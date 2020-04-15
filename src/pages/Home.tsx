@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const Test = styled.div`
   background: pink;
-  height: 200vh;
 `;
 
 const Home: React.FC = () => {

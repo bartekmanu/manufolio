@@ -1,16 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
+import PageHomeTitle from '../components/typography/PageHomeTitle';
 
-const Test = styled.div`
-  background: pink;
-`;
-
-const Home: React.FC = () => {
-  return (
-    <Test>
-      <h1>HOME</h1>
-    </Test>
-  );
-};
+const Home: React.FC = () => <PageHomeTitle />;
 
 export default Home;

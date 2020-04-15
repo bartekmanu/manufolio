@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -53,11 +53,43 @@ const SocialListItems = styled.ul`
 `;
 
 const App: React.FC = () => {
-  const home = <FontAwesomeIcon icon={faHome} size="2x" />;
-  const about = <FontAwesomeIcon icon={faUser} size="2x" />;
-  const skills = <FontAwesomeIcon icon={faTools} size="2x" />;
-  const myWork = <FontAwesomeIcon icon={faEye} size="2x" />;
-  const contact = <FontAwesomeIcon icon={faEnvelope} size="2x" />;
+  type Pages = {
+    icon: ReactElement;
+    route: string;
+  };
+
+  const pages: Pages[] = [
+    {
+      icon: <FontAwesomeIcon icon={faHome} size="2x" />,
+      route: '/',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faUser} size="2x" />,
+      route: '/about',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faTools} size="2x" />,
+      route: '/skills',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faEye} size="2x" />,
+      route: '/my-work',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faEnvelope} size="2x" />,
+      route: '/contact',
+    },
+  ];
+
+  const renderMenuItems = (): JSX.Element[] => {
+    return pages.map((item) => {
+      return (
+        <li>
+          <Link to={item.route}>{item.icon}</Link>
+        </li>
+      );
+    });
+  };
 
   const gitHubProject = <FontAwesomeIcon icon={faGithub} size="1x" />;
   const downloadCv = <FontAwesomeIcon icon={faDownload} size="1x" />;
@@ -74,23 +106,7 @@ const App: React.FC = () => {
             </Link>
           </nav>
           <nav>
-            <MenuItems>
-              <li>
-                <Link to="/">{home}</Link>
-              </li>
-              <li>
-                <Link to="/about">{about}</Link>
-              </li>
-              <li>
-                <Link to="/skills">{skills}</Link>
-              </li>
-              <li>
-                <Link to="/my-work">{myWork}</Link>
-              </li>
-              <li>
-                <Link to="/contact">{contact}</Link>
-              </li>
-            </MenuItems>
+            <MenuItems>{renderMenuItems()}</MenuItems>
           </nav>
 
           <SocialListItems>

@@ -43,6 +43,10 @@ interface Props {
   secondPageImgAlt?: string;
 }
 
+const PageBodyWrapper = styled.div`
+  display: flex;
+`;
+
 const PageContentWrapper: React.FC<Props> = ({
   pageTitle,
   pageBody,
@@ -54,7 +58,7 @@ const PageContentWrapper: React.FC<Props> = ({
   <ContentWrapper>
     <LeftSide>
       {pageTitle}
-      {pageBody ? <>{pageBody}</> : null}
+      {pageBody ? <PageBodyWrapper>{pageBody}</PageBodyWrapper> : null}
     </LeftSide>
     <RightSide>
       <>{pageImg ? <PageImg src={pageImg} alt={pageImgAlt} /> : null}</>

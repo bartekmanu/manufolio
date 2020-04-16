@@ -1,10 +1,18 @@
 import React from 'react';
-// import styled from 'styled-components';
-// import PageHomeTitle from '../components/typography/PageHomeTitle';
+import PageHomeTitle from '../components/typography/PageHomeTitle';
 import PageContentWrapper from '../components/PageContentWrapper';
+import portfolioLogo from '../images/logo-circle.png';
+import yellowSplash from '../images/yellow-splash.png';
 
-const Home: React.FC = () => <PageContentWrapper />;
+const Home: React.FC = () => (
+  <PageContentWrapper
+    pageTitle={<PageHomeTitle />}
+    // pageBody="Page content"
+    pageImg={portfolioLogo}
+    pageImgAlt="portfolio-logo"
+    secondPageImg={yellowSplash}
+    secondPageImgAlt="yellow-splash"
+  />
+);
 
-// <img src={portfolioLogo} alt="portfolio logo" />
-// import portfolioLogo from '../images/logo-circle.png';
 export default Home;

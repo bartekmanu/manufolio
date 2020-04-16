@@ -6,24 +6,29 @@ import { MenuItems } from '../interfaces/index';
 
 export const pages: MenuItems[] = [
   {
-    icon: <FontAwesomeIcon icon={faHome} size="2x" />,
     address: '/',
+    icon: <FontAwesomeIcon icon={faHome} size="2x" />,
+    slug: 'home-page',
   },
   {
-    icon: <FontAwesomeIcon icon={faUser} size="2x" />,
     address: '/about',
+    icon: <FontAwesomeIcon icon={faUser} size="2x" />,
+    slug: 'about-page',
   },
   {
-    icon: <FontAwesomeIcon icon={faTools} size="2x" />,
     address: '/skills',
+    icon: <FontAwesomeIcon icon={faTools} size="2x" />,
+    slug: 'skills-page',
   },
   {
-    icon: <FontAwesomeIcon icon={faEye} size="2x" />,
     address: '/my-work',
+    icon: <FontAwesomeIcon icon={faEye} size="2x" />,
+    slug: 'my-work-page',
   },
   {
-    icon: <FontAwesomeIcon icon={faEnvelope} size="2x" />,
     address: '/contact',
+    icon: <FontAwesomeIcon icon={faEnvelope} size="2x" />,
+    slug: 'contact-page',
   },
 ];
 
@@ -31,14 +36,17 @@ export const socials: MenuItems[] = [
   {
     address: 'https://github.com/bartekmanu',
     icon: <FontAwesomeIcon icon={faGithub} size="1x" />,
+    slug: 'github',
   },
   {
     address: 'https://www.linkedin.com/in/bartosz-manowski/',
     icon: <FontAwesomeIcon icon={faLinkedin} size="1x" />,
+    slug: 'linkedin',
   },
   {
     address: 'https://www.facebook.com/czaszkobij',
     icon: <FontAwesomeIcon icon={faFacebook} size="1x" />,
+    slug: 'facebook',
   },
 ];
 export default {};

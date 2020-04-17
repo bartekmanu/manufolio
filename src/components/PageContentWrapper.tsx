@@ -46,6 +46,8 @@ interface Props {
 const PageBodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 2rem 0 0 0;
+  padding: 0 0 0 1rem;
 `;
 
 const PageContentWrapper: React.FC<Props> = ({

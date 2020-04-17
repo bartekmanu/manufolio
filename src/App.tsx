@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { VARIABLES } from './styles/const';
+import { VARIABLES } from './assets/styles/const';
 import Logo from './components/Logo';
 import { pages, socials } from './utils/menu-data';
 import PageWrapper from './components/PageWrapper';
@@ -13,6 +13,8 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import MyWork from './pages/MyWork';
 import Contact from './pages/Contact';
+
+const { sideBarWidth } = VARIABLES;
 
 const MainPageWrapper = styled.div`
   display: flex;
@@ -27,7 +29,7 @@ const SideBar = styled.div`
   justify-content: space-between;
   align-items: center;
   box-shadow: inset 0px 4px 30px var(--side-bar-shadow);
-  width: ${VARIABLES.sideBarWidth}rem;
+  width: ${sideBarWidth}rem;
   height: 100vh;
 `;
 

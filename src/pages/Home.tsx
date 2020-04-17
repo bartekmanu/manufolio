@@ -1,7 +1,14 @@
 import React from 'react';
-// import styled from 'styled-components';
+import PageContentWrapper from '../components/PageContentWrapper';
 import PageHomeTitle from '../components/typography/PageHomeTitle';
+import portfolioLogo from '../images/logo-circle.png';
 
-const Home: React.FC = () => <PageHomeTitle />;
+const Home: React.FC = () => (
+  <PageContentWrapper
+    pageTitle={<PageHomeTitle />}
+    pageImg={portfolioLogo}
+    pageImgAlt="portfolio-logo"
+  />
+);
 
 export default Home;

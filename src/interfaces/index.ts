@@ -1,8 +1,9 @@
 import { ReactElement } from 'react';
 
 export type MenuItems = {
-  icon: ReactElement;
   address: string;
+  icon: ReactElement;
+  slug: string;
 };
 
 export default {};

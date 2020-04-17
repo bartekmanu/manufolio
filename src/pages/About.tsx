@@ -1,13 +1,43 @@
 import React from 'react';
-// import styled from 'styled-components';
+import PageContentWrapper from '../components/PageContentWrapper';
 import PageTitle from '../components/typography/PageTitle';
+import Paragraph from '../components/typography/Paragraph';
+import aboutMeImage from '../images/about-me-image.png';
+import yellowSplash from '../images/yellow-splash.png';
 
-const About: React.FC = () => (
-  <>
-    <PageTitle text="About" />
-    {/* TODO: */}
-    <p>Content</p>
-  </>
-);
+const About: React.FC = () => {
+  const renderParagraph = (): JSX.Element => (
+    <>
+      <Paragraph>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum doloremque accusamus id
+        error dolor a in perspiciatis! Iste aut nulla, ipsum labore saepe veniam necessitatibus,
+        ducimus odio molestiae non voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing
+        elit.
+      </Paragraph>
+      <Paragraph>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum doloremque accusamus id
+        error dolor a in perspiciatis! Iste aut nulla, ipsum labore saepe veniam necessitatibus,
+        ducimus odio molestiae non voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing
+        elit.
+      </Paragraph>
+      <Paragraph>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum doloremque accusamus id
+        error dolor a in perspiciatis! Iste aut nulla, ipsum labore saepe veniam necessitatibus,
+        ducimus odio molestiae non voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing
+        elit.
+      </Paragraph>
+    </>
+  );
+  return (
+    <PageContentWrapper
+      pageTitle={<PageTitle text="About" />}
+      pageBody={renderParagraph()}
+      pageImg={aboutMeImage}
+      pageImgAlt="about-me-image"
+      secondPageImg={yellowSplash}
+      secondPageImgAlt="yellow-splash"
+    />
+  );
+};
 
 export default About;

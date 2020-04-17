@@ -64,7 +64,7 @@ const App: React.FC = () => {
   const renderMenuItems = (): JSX.Element[] => {
     return pages.map((item) => {
       return (
-        <li>
+        <li key={item.slug}>
           <Link to={item.address}>{item.icon}</Link>
         </li>
       );
@@ -74,7 +74,7 @@ const App: React.FC = () => {
   const renderSocials = (): JSX.Element[] => {
     return socials.map((item) => {
       return (
-        <li>
+        <li key={item.slug}>
           <a href={item.address} target="_blank" rel="noopener noreferrer">
             {item.icon}
           </a>

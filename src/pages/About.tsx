@@ -2,8 +2,8 @@ import React from 'react';
 import PageContentWrapper from '../components/PageContentWrapper';
 import PageTitle from '../components/typography/PageTitle';
 import Paragraph from '../components/typography/Paragraph';
-import aboutMeImage from '../images/about-me-image.png';
-import yellowSplash from '../images/yellow-splash.png';
+import aboutMeImage from '../assets/images/about-me-image.png';
+import yellowSplash from '../assets/images/yellow-splash.png';
 
 const About: React.FC = () => {
   const renderParagraph = (): JSX.Element => (

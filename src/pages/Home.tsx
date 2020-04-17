@@ -1,7 +1,7 @@
 import React from 'react';
 import PageContentWrapper from '../components/PageContentWrapper';
 import PageHomeTitle from '../components/typography/PageHomeTitle';
-import portfolioLogo from '../images/logo-circle.png';
+import portfolioLogo from '../assets/images/logo-circle.png';
 
 const Home: React.FC = () => (
   <PageContentWrapper

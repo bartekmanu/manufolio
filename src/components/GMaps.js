@@ -5,90 +5,90 @@ const googleMapURL =
   'https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXRHlCydyksPOhmWTUdJLg0SXXA06l4I&callback=initMap';
 
 const exampleMapStyles = [
-  { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
-  { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
-  { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+  { elementType: 'geometry', stylers: [{ color: '#000000' }] },
+  { elementType: 'labels.text.stroke', stylers: [{ color: '#000000' }] },
+  { elementType: 'labels.text.fill', stylers: [{ color: 'transparent' }] },
   {
     featureType: 'administrative.locality',
     elementType: 'labels.text.fill',
-    stylers: [{ color: '#d59563' }],
+    stylers: [{ color: '#ffffff' }],
   },
   {
     featureType: 'poi',
     elementType: 'labels.text.fill',
-    stylers: [{ color: '#d59563' }],
+    stylers: [{ color: '#ffffff' }],
   },
   {
     featureType: 'poi.park',
     elementType: 'geometry',
-    stylers: [{ color: '#263c3f' }],
+    stylers: [{ color: 'transparent' }],
   },
   {
     featureType: 'poi.park',
     elementType: 'labels.text.fill',
-    stylers: [{ color: '#6b9a76' }],
+    stylers: [{ color: 'transparent' }],
   },
   {
     featureType: 'road',
     elementType: 'geometry',
-    stylers: [{ color: '#38414e' }],
+    stylers: [{ color: '#2b2b2b' }],
   },
   {
     featureType: 'road',
     elementType: 'geometry.stroke',
-    stylers: [{ color: '#212a37' }],
+    stylers: [{ color: 'transparent' }],
   },
   {
     featureType: 'road',
     elementType: 'labels.text.fill',
-    stylers: [{ color: '#9ca5b3' }],
+    stylers: [{ color: 'transparent' }],
   },
   {
     featureType: 'road.highway',
     elementType: 'geometry',
-    stylers: [{ color: '#746855' }],
+    stylers: [{ color: '#fbbc0c' }],
   },
   {
     featureType: 'road.highway',
     elementType: 'geometry.stroke',
-    stylers: [{ color: '#1f2835' }],
+    stylers: [{ color: '#2b2b2b' }],
   },
   {
     featureType: 'road.highway',
     elementType: 'labels.text.fill',
-    stylers: [{ color: '#f3d19c' }],
+    stylers: [{ color: 'transparent' }],
   },
   {
     featureType: 'transit',
     elementType: 'geometry',
-    stylers: [{ color: '#2f3948' }],
+    stylers: [{ color: 'transparent' }],
   },
   {
     featureType: 'transit.station',
     elementType: 'labels.text.fill',
-    stylers: [{ color: '#d59563' }],
+    stylers: [{ color: 'transparent' }],
   },
   {
     featureType: 'water',
     elementType: 'geometry',
-    stylers: [{ color: '#17263c' }],
+    stylers: [{ color: 'transparent' }],
   },
   {
     featureType: 'water',
     elementType: 'labels.text.fill',
-    stylers: [{ color: '#515c6d' }],
+    stylers: [{ color: 'transparent' }],
   },
   {
     featureType: 'water',
     elementType: 'labels.text.stroke',
-    stylers: [{ color: '#17263c' }],
+    stylers: [{ color: 'transparent' }],
   },
 ];
 
 const MyMapComponent = withScriptjs(
   withGoogleMap((props) => (
     <GoogleMap
-      defaultZoom={10}
+      defaultZoom={14}
       defaultCenter={{ lat: 50.263497, lng: 19.024357 }}
       defaultOptions={{ styles: exampleMapStyles }}
       options={{ styles: exampleMapStyles }}
@@ -105,7 +105,7 @@ const Dupa = () => (
     isMarkerShown
     googleMapURL={googleMapURL}
     loadingElement={<div style={{ height: `100%` }} />}
-    containerElement={<div style={{ height: `400px` }} />}
+    containerElement={<div style={{ height: `100%` }} />}
     mapElement={<div style={{ height: `100%` }} />}
   />
 );

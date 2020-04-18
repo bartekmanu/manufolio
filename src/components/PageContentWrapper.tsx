@@ -39,6 +39,8 @@ const PageBodyWrapper = styled.div`
   flex-direction: column;
   margin: 2rem 0 0 0;
   padding: 0 0 0 1rem;
+  height: 100%;
+  width: 100%;
 `;
 
 interface Props {
@@ -70,7 +72,7 @@ const PageContentWrapper: React.FC<Props> = ({
       {secondPageImgRight ? (
         <SecondPageImg src={secondPageImgRight} alt={secondPageImgAltRight} />
       ) : null}
-      <>{pageBodyRight ? <div>{pageBodyRight}</div> : null}</>
+      <>{pageBodyRight ? <PageBodyWrapper>{pageBodyRight}</PageBodyWrapper> : null}</>
     </RightSide>
   </ContentWrapper>
 );

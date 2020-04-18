@@ -1,6 +1,8 @@
 import React from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
-import Marker from './Marker';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+// import CustomMarker from '../assets/images/CustomMarker.png';
+import wro from '../assets/images/Wro.png';
+import kato from '../assets/images/Kato.png';
 
 const googleMapURL =
   'https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXRHlCydyksPOhmWTUdJLg0SXXA06l4I&callback=initMap';
@@ -12,7 +14,7 @@ const exampleMapStyles = [
   {
     featureType: 'administrative.locality',
     elementType: 'labels.text.fill',
-    stylers: [{ color: '#ffffff' }],
+    stylers: [{ color: '#ffffff', visibility: 'off' }],
   },
   {
     featureType: 'poi',
@@ -27,7 +29,7 @@ const exampleMapStyles = [
   {
     featureType: 'poi.park',
     elementType: 'labels.text.fill',
-    stylers: [{ color: 'transparent' }],
+    stylers: [{ visibility: 'off' }],
   },
   {
     featureType: 'road',
@@ -42,12 +44,12 @@ const exampleMapStyles = [
   {
     featureType: 'road',
     elementType: 'labels.text.fill',
-    stylers: [{ color: 'transparent' }],
+    stylers: [{ visibility: 'off' }],
   },
   {
     featureType: 'road.highway',
     elementType: 'geometry',
-    stylers: [{ color: '#fbbc0c' }],
+    stylers: [{ color: '#8c6800' }],
   },
   {
     featureType: 'road.highway',
@@ -63,6 +65,15 @@ const exampleMapStyles = [
     featureType: 'transit',
     elementType: 'geometry',
     stylers: [{ color: 'transparent' }],
+  },
+  {
+    featureType: 'poi.business',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'transit',
+    elementType: 'labels.icon',
+    stylers: [{ visibility: 'off' }],
   },
   {
     featureType: 'transit.station',
@@ -84,23 +95,33 @@ const exampleMapStyles = [
     elementType: 'labels.text.stroke',
     stylers: [{ color: 'transparent' }],
   },
+  {
+    featureType: 'administrative.locality',
+    elementType: 'labels',
+    stylers: [{ visibility: 'off' }],
+  },
+];
+
+const markerList = [
+  { lat: 50.263497, lng: 19.024357, icon: kato, slug: 'Katowice' },
+  { lat: 51.107517, lng: 17.038629, icon: wro, slug: 'Wrocław' },
 ];
 
 const MyMapComponent = withScriptjs(
-  withGoogleMap((props) => (
+  withGoogleMap(() => (
     <GoogleMap
-      defaultZoom={13}
-      defaultCenter={{ lat: 50.263497, lng: 19.024357 }}
+      defaultZoom={9}
+      defaultCenter={{ lat: 50.682586, lng: 17.971387 }}
       defaultOptions={{ styles: exampleMapStyles }}
       options={{ styles: exampleMapStyles }}
     >
-      {props.isMarkerShown && <Marker color="red" position={{ lat: 50.263497, lng: 19.024357 }} />}
+      {markerList.map((mark) => (
+        <Marker key={mark.slug} position={mark} icon={mark.icon} />
+      ))}
     </GoogleMap>
   )),
 );
-// 50.263497, 19.024357 Katowice
-// 51.107230, 17.036494 Wrocław
-// eslint-disable-next-line
+
 const GMap = () => (
   <MyMapComponent
     isMarkerShown

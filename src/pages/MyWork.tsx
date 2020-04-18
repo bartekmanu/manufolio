@@ -15,7 +15,7 @@ const MyWork: React.FC = () => {
     </TimelineWrapper>
   );
   return (
-    <PageContentWrapper pageTitle={<PageTitle text="My work" />} pageBody={renderTimeline()} />
+    <PageContentWrapper pageTitle={<PageTitle text="My work" />} pageBodyLeft={renderTimeline()} />
   );
 };
 

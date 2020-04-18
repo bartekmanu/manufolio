@@ -7,9 +7,9 @@ import Dupa from '../components/GMaps';
 const Home: React.FC = () => (
   <PageContentWrapper
     pageTitle={<PageHomeTitle />}
-    pageImg={portfolioLogo}
-    pageImgAlt="portfolio-logo"
-    pageBody={<Dupa />}
+    pageImgRight={portfolioLogo}
+    pageImgAltRight="portfolio-logo"
+    pageBodyLeft={<Dupa />}
   />
 );
 

@@ -34,15 +34,6 @@ const SecondPageImg = styled.img`
   right: 0;
 `;
 
-interface Props {
-  pageTitle: ReactNode;
-  pageBody?: ReactNode;
-  pageImg?: string;
-  pageImgAlt?: string;
-  secondPageImg?: string;
-  secondPageImgAlt?: string;
-}
-
 const PageBodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,41 +41,57 @@ const PageBodyWrapper = styled.div`
   padding: 0 0 0 1rem;
 `;
 
+interface Props {
+  pageTitle: ReactNode;
+  pageBodyLeft?: ReactNode;
+  pageImgRight?: string;
+  pageImgAltRight?: string;
+  secondPageImgRight?: string;
+  secondPageImgAltRight?: string;
+  pageBodyRight?: ReactNode;
+}
+
 const PageContentWrapper: React.FC<Props> = ({
   pageTitle,
-  pageBody,
-  pageImg,
-  pageImgAlt,
-  secondPageImg,
-  secondPageImgAlt,
+  pageBodyLeft,
+  pageImgRight,
+  pageImgAltRight,
+  secondPageImgRight,
+  secondPageImgAltRight,
+  pageBodyRight,
 }) => (
   <ContentWrapper>
     <LeftSide>
       {pageTitle}
-      {pageBody ? <PageBodyWrapper>{pageBody}</PageBodyWrapper> : null}
+      {pageBodyLeft ? <PageBodyWrapper>{pageBodyLeft}</PageBodyWrapper> : null}
     </LeftSide>
     <RightSide>
-      <>{pageImg ? <PageImg src={pageImg} alt={pageImgAlt} /> : null}</>
-      {secondPageImg ? <SecondPageImg src={secondPageImg} alt={secondPageImgAlt} /> : null}
+      <>{pageImgRight ? <PageImg src={pageImgRight} alt={pageImgAltRight} /> : null}</>
+      {secondPageImgRight ? (
+        <SecondPageImg src={secondPageImgRight} alt={secondPageImgAltRight} />
+      ) : null}
+      <>{pageBodyRight ? <div>{pageBodyRight}</div> : null}</>
     </RightSide>
   </ContentWrapper>
 );
 
 PageContentWrapper.propTypes = {
   pageTitle: PropTypes.node.isRequired,
-  pageBody: PropTypes.node,
-  pageImg: PropTypes.string,
-  pageImgAlt: PropTypes.string,
-  secondPageImg: PropTypes.string,
-  secondPageImgAlt: PropTypes.string,
+  pageBodyLeft: PropTypes.node,
+  pageImgRight: PropTypes.string,
+  pageImgAltRight: PropTypes.string,
+  secondPageImgRight: PropTypes.string,
+  secondPageImgAltRight: PropTypes.string,
+  pageBodyRight: PropTypes.node,
 };
 
 PageContentWrapper.defaultProps = {
-  pageBody: null,
-  pageImg: '',
-  pageImgAlt: '',
-  secondPageImg: '',
-  secondPageImgAlt: '',
+  pageBodyLeft: null,
+  pageImgRight: '',
+  pageImgAltRight: '',
+  secondPageImgRight: '',
+  secondPageImgAltRight: '',
+  pageBodyRight: '',
 };
 
 export default PageContentWrapper;

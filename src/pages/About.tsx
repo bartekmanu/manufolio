@@ -31,11 +31,11 @@ const About: React.FC = () => {
   return (
     <PageContentWrapper
       pageTitle={<PageTitle text="About" />}
-      pageBody={renderParagraph()}
-      pageImg={aboutMeImage}
-      pageImgAlt="about-me-image"
-      secondPageImg={yellowSplash}
-      secondPageImgAlt="yellow-splash"
+      pageBodyLeft={renderParagraph()}
+      pageImgRight={aboutMeImage}
+      pageImgAltRight="about-me-image"
+      secondPageImgRight={yellowSplash}
+      secondPageImgAltRight="yellow-splash"
     />
   );
 };

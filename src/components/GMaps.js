@@ -1,5 +1,6 @@
 import React from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
+import Marker from './Marker';
 
 const googleMapURL =
   'https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXRHlCydyksPOhmWTUdJLg0SXXA06l4I&callback=initMap';
@@ -88,19 +89,19 @@ const exampleMapStyles = [
 const MyMapComponent = withScriptjs(
   withGoogleMap((props) => (
     <GoogleMap
-      defaultZoom={14}
+      defaultZoom={13}
       defaultCenter={{ lat: 50.263497, lng: 19.024357 }}
       defaultOptions={{ styles: exampleMapStyles }}
       options={{ styles: exampleMapStyles }}
     >
-      {props.isMarkerShown && <Marker position={{ lat: 50.263497, lng: 19.024357 }} />}
+      {props.isMarkerShown && <Marker color="red" position={{ lat: 50.263497, lng: 19.024357 }} />}
     </GoogleMap>
   )),
 );
 // 50.263497, 19.024357 Katowice
 // 51.107230, 17.036494 Wrocław
 // eslint-disable-next-line
-const Dupa = () => (
+const GMap = () => (
   <MyMapComponent
     isMarkerShown
     googleMapURL={googleMapURL}
@@ -110,4 +111,4 @@ const Dupa = () => (
   />
 );
 
-export default Dupa;
+export default GMap;

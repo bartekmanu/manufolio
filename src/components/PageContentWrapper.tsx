@@ -9,6 +9,7 @@ const ContentWrapper = styled.div`
 
 const LeftSide = styled.div`
   width: 50%;
+  padding: 0 0 0 3rem;
 `;
 
 const RightSide = styled.div`

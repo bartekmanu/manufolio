@@ -18,7 +18,7 @@ const { sideBarWidth } = VARIABLES;
 
 const MainPageWrapper = styled.div`
   display: flex;
-  background: linear-gradient(to right, var(--main-bg-color) 0%, var(--secondary-bg-color) 100%);
+  background: linear-gradient(90deg, var(--main-bg-color) -80%, var(--secondary-bg-color) 100%);
 `;
 
 const SideBar = styled.div`
@@ -53,13 +53,6 @@ const SocialListItems = styled.ul`
       color: var(--secondary-font-color);
     }
   }
-`;
-
-const SectionWrapper = styled.div`
-  height: 100%;
-  padding: 0 0 0 3rem;
-  display: flex;
-  flex-direction: column;
 `;
 
 const App: React.FC = () => {
@@ -113,29 +106,19 @@ const App: React.FC = () => {
         <PageWrapper>
           <Switch>
             <Route path="/contact">
-              <SectionWrapper>
-                <Contact />
-              </SectionWrapper>
+              <Contact />
             </Route>
             <Route path="/my-work">
-              <SectionWrapper>
-                <MyWork />
-              </SectionWrapper>
+              <MyWork />
             </Route>
             <Route path="/skills">
-              <SectionWrapper>
-                <Skills />
-              </SectionWrapper>
+              <Skills />
             </Route>
             <Route path="/about">
-              <SectionWrapper>
-                <About />
-              </SectionWrapper>
+              <About />
             </Route>
             <Route path="/">
-              <SectionWrapper>
-                <Home />
-              </SectionWrapper>
+              <Home />
             </Route>
           </Switch>
         </PageWrapper>

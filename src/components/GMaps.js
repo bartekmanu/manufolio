@@ -122,6 +122,7 @@ const MyMapComponent = withScriptjs(
   )),
 );
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const GMap = () => (
   <MyMapComponent
     isMarkerShown

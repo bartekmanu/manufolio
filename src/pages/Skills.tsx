@@ -30,9 +30,9 @@ const Skills: React.FC = () => {
   return (
     <PageContentWrapper
       pageTitle={<PageTitle text="Skills" />}
-      pageBody={renderSkillsLogo()}
-      secondPageImg={graySplash}
-      secondPageImgAlt="gray-splash"
+      pageBodyLeft={renderSkillsLogo()}
+      secondPageImgRight={graySplash}
+      secondPageImgAltRight="gray-splash"
     />
   );
 };

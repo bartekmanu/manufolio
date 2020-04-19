@@ -6,8 +6,8 @@ import portfolioLogo from '../assets/images/logo-circle.png';
 const Home: React.FC = () => (
   <PageContentWrapper
     pageTitle={<PageHomeTitle />}
-    pageImg={portfolioLogo}
-    pageImgAlt="portfolio-logo"
+    pageImgRight={portfolioLogo}
+    pageImgAltRight="portfolio-logo"
   />
 );
 

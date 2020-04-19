@@ -1,4 +1,3 @@
-// import React from 'react';
 import js from '../assets/images/skills/js.png';
 import es6 from '../assets/images/skills/es6.png';
 import react from '../assets/images/skills/react.png';

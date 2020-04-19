@@ -13,6 +13,8 @@ const TimelineWrapper = styled.div`
 const WorksWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
 `;
 
 const WorkItem = styled.div`

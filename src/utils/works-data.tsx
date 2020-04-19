@@ -1,4 +1,9 @@
-import manufolio from '../assets/images/work/manufolio.png';
+import manufolio from '../assets/images/work/Manufolio.png';
+import trustmate from '../assets/images/work/TrustMate.png';
+import blockchainhouse from '../assets/images/work/BlockchainHouse.png';
+import buycoinnow from '../assets/images/work/BuyCoinNow.png';
+import blockchain24 from '../assets/images/work/Blockchain24.png';
+import rockwallinvestments from '../assets/images/work/RockwallInvestments.png';
 
 export type WorksItems = {
   img: string;
@@ -10,75 +15,39 @@ export type WorksItems = {
 export const works: WorksItems[] = [
   {
     img: manufolio,
-    link: 'https://www.youtube.com/',
-    name: 'manufolio 1',
+    link: 'https://github.com/bartekmanu/manufolio',
+    name: 'manufolio',
     slug: 'manufolio',
   },
   {
-    img: manufolio,
+    img: trustmate,
     link: 'https://www.youtube.com/',
-    name: 'manufolio 2',
-    slug: 'manufolio',
+    name: 'TrustMate',
+    slug: 'trustmate',
   },
   {
-    img: manufolio,
+    img: blockchainhouse,
     link: 'https://www.youtube.com/',
-    name: 'manufolio 3',
-    slug: 'manufolio',
+    name: 'Blockchain House',
+    slug: 'blockchain-house',
   },
   {
-    img: manufolio,
+    img: buycoinnow,
     link: 'https://www.youtube.com/',
-    name: 'manufolio 4',
-    slug: 'manufolio',
+    name: 'Buy Coin Now',
+    slug: 'buy-coin-now',
   },
   {
-    img: manufolio,
+    img: blockchain24,
     link: 'https://www.youtube.com/',
-    name: 'manufolio 5',
-    slug: 'manufolio',
+    name: 'Blockchain 24',
+    slug: 'blockchain-24',
   },
   {
-    img: manufolio,
+    img: rockwallinvestments,
     link: 'https://www.youtube.com/',
-    name: 'manufolio 6',
-    slug: 'manufolio',
-  },
-  {
-    img: manufolio,
-    link: 'https://www.youtube.com/',
-    name: 'manufolio 7',
-    slug: 'manufolio',
-  },
-  {
-    img: manufolio,
-    link: 'https://www.youtube.com/',
-    name: 'manufolio 8',
-    slug: 'manufolio',
-  },
-  {
-    img: manufolio,
-    link: 'https://www.youtube.com/',
-    name: 'manufolio 9 ',
-    slug: 'manufolio',
-  },
-  {
-    img: manufolio,
-    link: 'https://www.youtube.com/',
-    name: 'manufolio 10',
-    slug: 'manufolio',
-  },
-  {
-    img: manufolio,
-    link: 'https://www.youtube.com/',
-    name: 'manufolio 11',
-    slug: 'manufolio',
-  },
-  {
-    img: manufolio,
-    link: 'https://www.youtube.com/',
-    name: 'manufolio 12',
-    slug: 'manufolio',
+    name: 'Rockwall Investments',
+    slug: 'rockwall-investments',
   },
 ];
 

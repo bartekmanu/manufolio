@@ -7,6 +7,7 @@ import { works } from '../utils/works-data';
 
 const TimelineWrapper = styled.div`
   display: flex;
+  width: 80%;
 `;
 
 const WorksWrapper = styled.div`

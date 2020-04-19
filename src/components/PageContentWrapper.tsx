@@ -10,6 +10,8 @@ const ContentWrapper = styled.div`
 const LeftSide = styled.div`
   width: 50%;
   padding: 0 0 0 3rem;
+  justify-content: center;
+  align-items: center;
 `;
 
 const RightSide = styled.div`
@@ -66,7 +68,7 @@ const PageContentWrapper: React.FC<Props> = ({
   <ContentWrapper>
     <LeftSide>
       {pageTitle}
-      {pageBodyLeft ? <PageBodyWrapper>{pageBodyLeft}</PageBodyWrapper> : null}
+      <>{pageBodyLeft ? <PageBodyWrapper>{pageBodyLeft}</PageBodyWrapper> : null}</>
     </LeftSide>
     <RightSide>
       <>{pageImgRight ? <PageImg src={pageImgRight} alt={pageImgAltRight} /> : null}</>

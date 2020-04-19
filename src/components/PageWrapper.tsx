@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   min-height: calc(100vh - 1rem);
   width: 100%;
+  overflow: hidden;
 `;
 
 const WrapperSpan = styled.span`

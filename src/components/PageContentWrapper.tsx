@@ -1,10 +1,15 @@
 import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { DEVICE } from '../assets/styles/const';
+
+const { sm, md, lg, xl } = DEVICE;
 
 const ContentWrapper = styled.div`
-  height: 100%;
-  display: flex;
+  @media ${lg} {
+    height: 100%;
+    display: flex;
+  }
 `;
 
 const LeftSide = styled.div`

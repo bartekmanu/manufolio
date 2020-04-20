@@ -1,14 +1,21 @@
 import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { VARIABLES, DEVICE } from '../assets/styles/const';
+
+const { sm, md, lg, xl } = DEVICE;
+const { sideBarWidth } = VARIABLES;
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: calc(100vh - 1rem);
-  width: 100%;
-  overflow: hidden;
+  @media ${lg} {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 0 0 ${sideBarWidth}rem;
+  }
 `;
 
 const WrapperSpan = styled.span`

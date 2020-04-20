@@ -22,61 +22,105 @@ const { sideBarWidth, logoWidth, logoHeight } = VARIABLES;
 const { sm, md, lg, xl } = DEVICE;
 
 const App: React.FC = () => {
+  const [sideBarPosition, setSideBarPosition] = useState(false);
+
   const MainPageWrapper = styled.div`
     display: flex;
     background: linear-gradient(90deg, var(--main-bg-color) -80%, var(--secondary-bg-color) 100%);
   `;
 
-  const [sideBarPosition, setSideBarPosition] = useState(false);
-
   const SideBar = styled.div`
-    position: absolute;
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     box-shadow: inset 0px 4px 30px var(--side-bar-shadow);
     background: var(--main-bg-color);
-    width: 6.25rem;
+    width: 100vw;
     height: 100vh;
     z-index: 10;
-    transform: translateX(${sideBarPosition ? '0' : '-6.25rem'});
+    transform: translateX(${sideBarPosition ? '0' : '-100vw'});
     transition: 0.5s ease-in-out;
 
     @media ${lg} {
       transform: translateX(0);
       width: ${sideBarWidth}rem;
+      justify-content: space-between;
     }
   `;
 
-  const MenuItems = styled.ul`
-    li {
-      margin-bottom: 2rem;
-      text-align: center;
+  const MenuItems = styled.nav`
+    width: 100%;
 
-      a {
-        color: var(--main-color);
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+
+      li {
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 3rem;
+
+        a {
+          color: var(--main-color);
+        }
+      }
+
+      @media ${lg} {
+        display: block;
+
+        li {
+          font-size: 2rem;
+        }
       }
     }
   `;
 
   const SocialListItems = styled.ul`
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
     li {
       margin-bottom: 1rem;
       text-align: center;
+      font-size: 2rem;
 
       a {
         color: var(--secondary-font-color);
       }
     }
+    @media ${lg} {
+      display: block;
+
+      li {
+        font-size: 1rem;
+      }
+    }
+  `;
+
+  const NavWithLogo = styled.nav`
+    order: 3;
+    @media ${lg} {
+      order: 0;
+    }
   `;
 
   const MenuLogo = styled.img`
-    width: ${logoWidth}rem;
-    height: ${logoHeight}rem;
+    width: calc(${logoWidth}rem * 4);
+    height: calc(${logoHeight}rem * 4);
+
+    @media ${lg} {
+      width: ${logoWidth}rem;
+      height: ${logoHeight}rem;
+    }
   `;
 
   const MenuBtn = styled.button`
+    /* TODO: */
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -87,9 +131,7 @@ const App: React.FC = () => {
   const setSideBar = (): void =>
     sideBarPosition ? setSideBarPosition(false) : setSideBarPosition(true);
 
-  const renderMenuBtn = (): JSX.Element => {
-    return <MenuBtn onClick={setSideBar}>X</MenuBtn>;
-  };
+  const renderMenuBtn = (): JSX.Element => <MenuBtn onClick={setSideBar}>X</MenuBtn>;
 
   const renderMenuItems = (): JSX.Element[] => {
     return pages.map((item) => {
@@ -122,14 +164,14 @@ const App: React.FC = () => {
       {renderMenuBtn()}
       <MainPageWrapper>
         <SideBar>
-          <nav>
+          <NavWithLogo>
             <Link to="/" onClick={setSideBar}>
               <MenuLogo src={logo} />
             </Link>
-          </nav>
-          <nav>
-            <MenuItems>{renderMenuItems()}</MenuItems>
-          </nav>
+          </NavWithLogo>
+          <MenuItems>
+            <ul>{renderMenuItems()}</ul>
+          </MenuItems>
 
           <SocialListItems>
             <li>

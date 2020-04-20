@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { VARIABLES } from './assets/styles/const';
-import Logo from './components/Logo';
+import { VARIABLES, DEVICE } from './assets/styles/const';
+import logo from './assets/images/logo.png';
 import { pages, socials } from './utils/menu-data';
 import PageWrapper from './components/PageWrapper';
 
@@ -17,7 +17,8 @@ import Contact from './pages/Contact';
 // @ts-ignore
 import cvBM from './assets/BartoszManowski.pdf';
 
-const { sideBarWidth } = VARIABLES;
+const { sideBarWidth, logoWidth, logoHeight } = VARIABLES;
+const { sm, md, lg, xl } = DEVICE;
 
 const MainPageWrapper = styled.div`
   display: flex;
@@ -58,6 +59,11 @@ const SocialListItems = styled.ul`
   }
 `;
 
+const MenuLogo = styled.img`
+  width: ${logoWidth}rem;
+  height: ${logoHeight}rem;
+`;
+
 const App: React.FC = () => {
   const renderMenuItems = (): JSX.Element[] => {
     return pages.map((item) => {
@@ -89,7 +95,7 @@ const App: React.FC = () => {
         <SideBar>
           <nav>
             <Link to="/">
-              <Logo />
+              <MenuLogo src={logo} />
             </Link>
           </nav>
           <nav>

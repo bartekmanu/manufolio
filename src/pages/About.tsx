@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import PageContentWrapper from '../components/PageContentWrapper';
 import PageTitle from '../components/typography/PageTitle';
 import Paragraph from '../components/typography/Paragraph';
-import aboutMeImage from '../assets/images/about-me-image.png';
 import photosplash from '../assets/images/photosplash.png';
 import { DEVICE } from '../assets/styles/const';
 
-const { sm, md, lg, xl, xxl } = DEVICE;
+const { xl, xxl } = DEVICE;
 
 const About: React.FC = () => {
   const AboutWrapper = styled.div`

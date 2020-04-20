@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 import { DEVICE } from './const';
 
-const { sm, md, lg, xl } = DEVICE;
+const { lg } = DEVICE;
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize}

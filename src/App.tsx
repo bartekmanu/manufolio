@@ -19,7 +19,7 @@ import Contact from './pages/Contact';
 import cvBM from './assets/BartoszManowski.pdf';
 
 const { sideBarWidth, logoWidth, logoHeight } = VARIABLES;
-const { sm, md, lg, xl } = DEVICE;
+const { lg } = DEVICE;
 
 const App: React.FC = () => {
   const [sideBarPosition, setSideBarPosition] = useState(false);

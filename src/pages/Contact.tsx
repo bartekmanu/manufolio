@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopeOpen, faPhoneAlt, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import PageContentWrapper from '../components/PageContentWrapper';
 import PageTitle from '../components/typography/PageTitle';
-import GMaps from '../components/GMaps';
+// import GMaps from '../components/GMaps';
 
 const ContactItemsWrapper = styled.div`
   display: flex;

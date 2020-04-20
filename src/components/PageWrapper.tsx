@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { VARIABLES, DEVICE } from '../assets/styles/const';
 
-const { sm, md, lg, xl } = DEVICE;
+const { lg } = DEVICE;
 const { sideBarWidth } = VARIABLES;
 
 const Wrapper = styled.div`

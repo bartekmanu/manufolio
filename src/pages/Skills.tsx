@@ -6,7 +6,7 @@ import graySplash from '../assets/images/gray-splash.png';
 import { skills } from '../utils/skills-data';
 import { DEVICE } from '../assets/styles/const';
 
-const { sm, md, lg, xl } = DEVICE;
+const { lg, xl } = DEVICE;
 
 const SkillWrapper = styled.div`
   display: flex;

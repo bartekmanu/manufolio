@@ -13,6 +13,9 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import MyWork from './pages/MyWork';
 import Contact from './pages/Contact';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
+import cvBM from './assets/BartoszManowski.pdf';
 
 const { sideBarWidth } = VARIABLES;
 
@@ -95,7 +98,7 @@ const App: React.FC = () => {
 
           <SocialListItems>
             <li>
-              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+              <a href={cvBM} download="Bartosz-Manowski-CV.pdf">
                 {downloadCv}
               </a>
             </li>

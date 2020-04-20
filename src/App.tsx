@@ -27,6 +27,7 @@ const App: React.FC = () => {
   const MainPageWrapper = styled.div`
     display: flex;
     background: linear-gradient(90deg, var(--main-bg-color) -80%, var(--secondary-bg-color) 100%);
+    min-height: 100vh;
   `;
 
   const SideBar = styled.div`
@@ -37,7 +38,7 @@ const App: React.FC = () => {
     justify-content: space-evenly;
     align-items: center;
     box-shadow: inset 0px 4px 30px var(--side-bar-shadow);
-    background: var(--main-bg-color);
+    background: linear-gradient(90deg, var(--main-bg-color) -80%, var(--secondary-bg-color) 100%);
     width: 100vw;
     height: 100vh;
     z-index: 10;
@@ -45,6 +46,7 @@ const App: React.FC = () => {
     transition: 0.5s ease-in-out;
 
     @media ${lg} {
+      background: transparent;
       transform: translateX(0);
       width: ${sideBarWidth}rem;
       justify-content: space-between;

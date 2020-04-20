@@ -4,10 +4,18 @@ import PageContentWrapper from '../components/PageContentWrapper';
 import PageTitle from '../components/typography/PageTitle';
 import graySplash from '../assets/images/gray-splash.png';
 import { skills } from '../utils/skills-data';
+import { DEVICE } from '../assets/styles/const';
+
+const { sm, md, lg, xl } = DEVICE;
 
 const SkillWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+
+  @media ${lg} {
+    justify-content: flex-start;
+  }
 `;
 
 const SkillImg = styled.img`

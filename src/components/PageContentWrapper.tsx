@@ -13,18 +13,27 @@ const ContentWrapper = styled.div`
 `;
 
 const LeftSide = styled.div`
-  width: 50%;
-  padding: 0 0 0 3rem;
+  padding: 0 2rem 0 2rem;
   justify-content: center;
   align-items: center;
+  z-index: 2;
+
+  @media ${lg} {
+    padding: 0 0 0 3rem;
+    width: 50%;
+  }
 `;
 
 const RightSide = styled.div`
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  display: none;
+  z-index: 1;
+  @media ${lg} {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
 `;
 
 // 625px ===39.063rem
@@ -46,9 +55,12 @@ const PageBodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2rem 0 0 0;
-  padding: 0 0 0 1rem;
   height: 100%;
   width: 100%;
+
+  @media ${lg} {
+    padding: 0 0 0 1rem;
+  }
 `;
 
 interface Props {

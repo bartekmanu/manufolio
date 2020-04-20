@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
     <PageContentWrapper
       pageTitle={<PageTitle text="Contact" />}
       pageBodyLeft={renderContactInfos()}
-      pageBodyRight={<GMaps />}
+      // pageBodyRight={<GMaps />}
     />
   );
 };

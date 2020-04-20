@@ -36,6 +36,7 @@ const About: React.FC = () => {
       pageImgAltRight="about-me-image"
       secondPageImgRight={yellowSplash}
       secondPageImgAltRight="yellow-splash"
+      // pageBodyRightVisibility
     />
   );
 };

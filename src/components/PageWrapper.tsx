@@ -21,13 +21,20 @@ const Wrapper = styled.div`
 const WrapperSpan = styled.span`
   font-family: 'Damion', cursive;
   color: var(--secondary-font-color);
-  margin: 1rem 0 1rem 2rem;
+  margin: 1rem 0 1rem 1rem;
   display: block;
   font-size: 1.5rem;
   text-shadow: 0px 0px 5px var(--secondary-bg-color);
 
   &:last-child {
-    margin: 0 0 1rem 1rem;
+    margin: 0 0 1rem 0.25rem;
+  }
+
+  @media ${lg} {
+    margin: 1rem 0 1rem 2rem;
+    &:last-child {
+      margin: 0 0 1rem 1rem;
+    }
   }
 `;
 

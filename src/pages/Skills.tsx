@@ -16,6 +16,10 @@ const SkillWrapper = styled.div`
   @media ${lg} {
     justify-content: flex-start;
   }
+
+  @media ${xl} {
+    width: 60%;
+  }
 `;
 
 const SkillImg = styled.img`

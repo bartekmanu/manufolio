@@ -1,14 +1,16 @@
 import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { DEVICE } from '../assets/styles/const';
+import { VARIABLES, DEVICE } from '../assets/styles/const';
 
-const { sm, md, lg, xl } = DEVICE;
+const { sm, md, lg, xl, xxl } = DEVICE;
+const { pageImg, splashHeight } = VARIABLES;
 
 const ContentWrapper = styled.div`
   @media ${lg} {
     height: 100%;
     display: flex;
+    justify-content: space-between;
   }
 `;
 
@@ -18,37 +20,36 @@ const LeftSide = styled.div`
   align-items: center;
   z-index: 2;
 
-  @media ${lg} {
+  @media ${xxl} {
     padding: 0 0 0 3rem;
-    width: 50%;
   }
 `;
 
 const RightSide = styled.div`
   display: none;
   z-index: 1;
-  @media ${lg} {
-    width: 50%;
+  @media ${xl} {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
   }
 `;
 
-// 625px ===39.063rem
 const PageImg = styled.img`
-  height: 39.063rem;
-  width: 39.063rem;
+  height: ${pageImg}rem;
+  padding: 0 3rem 0 0;
 `;
 
-// 729px === 45.563rem
-// 900px === 56.25rem
 const SecondPageImg = styled.img`
-  height: 56.25rem;
-  width: 45.563rem;
+  height: ${splashHeight}rem;
   position: absolute;
   right: 0;
+  opacity: 0.2;
+
+  @media ${xxl} {
+    opacity: 1;
+    top: calc(50% - (${splashHeight}rem / 2));
+  }
 `;
 
 const PageBodyWrapper = styled.div`
@@ -57,10 +58,6 @@ const PageBodyWrapper = styled.div`
   margin: 2rem 0 0 0;
   height: 100%;
   width: 100%;
-
-  @media ${lg} {
-    padding: 0 0 0 1rem;
-  }
 `;
 
 interface Props {

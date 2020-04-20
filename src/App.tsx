@@ -43,7 +43,6 @@ const App: React.FC = () => {
     height: 100vh;
     z-index: 10;
     transform: translateX(${sideBarPosition ? '0' : '-100vw'});
-    transition: 0.5s ease-in-out;
 
     @media ${lg} {
       background: transparent;

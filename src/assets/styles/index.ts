@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
+import { DEVICE } from './const';
+
+const { lg } = DEVICE;
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -14,9 +17,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: 16px;
+    font-size: 12px;
     font-family: 'Doppio One', sans-serif;
     color: var(--main-font-color);
+
+    @media ${lg} {
+      font-size: 16px;
+    }
 
     ul {
       margin: 0;

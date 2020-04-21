@@ -5,8 +5,17 @@ import { faEnvelopeOpen, faPhoneAlt, faMapMarkedAlt } from '@fortawesome/free-so
 import PageContentWrapper from '../components/PageContentWrapper';
 import PageTitle from '../components/typography/PageTitle';
 import GMaps from '../components/GMaps';
+import { DEVICE } from '../assets/styles/const';
 
-const ContactItemsWrapper = styled.div`
+const { lg } = DEVICE;
+
+const ContactInfoWrapper = styled.div`
+  @media ${lg} {
+    margin: 3rem 0 0 0;
+  }
+`;
+
+const ContactItems = styled.div`
   display: flex;
   color: var(--secondary-font-color);
   font-size: 1.5rem;
@@ -32,28 +41,29 @@ const ContactItemsWrapper = styled.div`
 const Contact: React.FC = () => {
   const renderContactInfos = (): JSX.Element => {
     return (
-      <div>
-        <ContactItemsWrapper>
+      <ContactInfoWrapper>
+        <ContactItems>
           <FontAwesomeIcon icon={faEnvelopeOpen} />
           <a href="mailto:manowski.b@gmail.com">manowski.b@gmail.com</a>
-        </ContactItemsWrapper>
-        <ContactItemsWrapper>
+        </ContactItems>
+        <ContactItems>
           <FontAwesomeIcon icon={faPhoneAlt} />
           <a href="tel:+48 790225013">+48 791 611 443</a>
-        </ContactItemsWrapper>
-        <ContactItemsWrapper>
+        </ContactItems>
+        <ContactItems>
           <FontAwesomeIcon icon={faMapMarkedAlt} />
           <span>Wrocław || Katowice</span>
-        </ContactItemsWrapper>
-      </div>
+        </ContactItems>
+      </ContactInfoWrapper>
     );
   };
 
   return (
     <PageContentWrapper
       pageTitle={<PageTitle text="Contact" />}
-      pageBodyLeft={renderContactInfos()}
-      pageBodyRight={<GMaps />}
+      colLeftBody={renderContactInfos()}
+      colRightBodyMobile={<GMaps />}
+      withMap
     />
   );
 };

@@ -4,24 +4,48 @@ import PageContentWrapper from '../components/PageContentWrapper';
 import PageTitle from '../components/typography/PageTitle';
 import timeline from '../assets/images/timeline.png';
 import { works } from '../utils/works-data';
+import { DEVICE } from '../assets/styles/const';
+
+const { md, lg } = DEVICE;
 
 const TimelineWrapper = styled.div`
   display: flex;
-  width: 80%;
+  justify-content: center;
+
+  @media ${lg} {
+    margin: 3rem 0 0 0;
+  }
+
+  img {
+    height: 6.5rem;
+    width: auto;
+
+    @media ${md} {
+      height: 7.5rem;
+    }
+  }
 `;
 
 const WorksWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: space-evenly;
+  align-content: center;
   height: 100%;
+
+  @media ${lg} {
+    padding: 0 0 0 5rem;
+  }
 `;
 
 const WorkItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(100% / 2);
+  padding: 0.938rem;
+  border-radius: 0.625rem;
+  background: #4a4a4a50;
+  margin: 0 0 2rem 0;
 
   a {
     text-decoration: none;
@@ -29,7 +53,7 @@ const WorkItem = styled.div`
     color: var(--main-font-color);
     font-size: 1.25rem;
     transition: 0.5s;
-    margin: 1.5rem 0 1.5rem 0;
+    margin: 0.938rem 0 0 0;
 
     &::first-letter {
       color: var(--main-color);
@@ -77,8 +101,8 @@ const MyWork: React.FC = () => {
   return (
     <PageContentWrapper
       pageTitle={<PageTitle text="My work" />}
-      pageBodyLeft={renderTimeline()}
-      pageBodyRight={renderWorks()}
+      colLeftBody={renderTimeline()}
+      colRightBodyMobile={renderWorks()}
     />
   );
 };

@@ -60,6 +60,11 @@ const PageBodyWrapper = styled.div`
   width: 100%;
 `;
 
+const PageRighSideWithMobile = styled.div`
+  background: red;
+  display: flex;
+`;
+
 interface Props {
   pageTitle: ReactNode;
   pageBodyLeft?: ReactNode;
@@ -68,6 +73,7 @@ interface Props {
   secondPageImgRight?: string;
   secondPageImgAltRight?: string;
   pageBodyRight?: ReactNode;
+  pageBodyRightMobile?: ReactNode;
 }
 
 const PageContentWrapper: React.FC<Props> = ({
@@ -78,6 +84,7 @@ const PageContentWrapper: React.FC<Props> = ({
   secondPageImgRight,
   secondPageImgAltRight,
   pageBodyRight,
+  pageBodyRightMobile,
 }) => (
   <ContentWrapper>
     <LeftSide>
@@ -91,6 +98,11 @@ const PageContentWrapper: React.FC<Props> = ({
       ) : null}
       <>{pageBodyRight ? <PageBodyWrapper>{pageBodyRight}</PageBodyWrapper> : null}</>
     </RightSide>
+    {pageBodyRightMobile && (
+      <PageRighSideWithMobile>
+        <PageBodyWrapper>{pageBodyRightMobile}</PageBodyWrapper>
+      </PageRighSideWithMobile>
+    )}
   </ContentWrapper>
 );
 
@@ -102,6 +114,7 @@ PageContentWrapper.propTypes = {
   secondPageImgRight: PropTypes.string,
   secondPageImgAltRight: PropTypes.string,
   pageBodyRight: PropTypes.node,
+  pageBodyRightMobile: PropTypes.node,
 };
 
 PageContentWrapper.defaultProps = {
@@ -110,7 +123,8 @@ PageContentWrapper.defaultProps = {
   pageImgAltRight: '',
   secondPageImgRight: '',
   secondPageImgAltRight: '',
-  pageBodyRight: '',
+  pageBodyRight: null,
+  pageBodyRightMobile: null,
 };
 
 export default PageContentWrapper;

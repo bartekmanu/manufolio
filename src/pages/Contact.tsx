@@ -4,11 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopeOpen, faPhoneAlt, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import PageContentWrapper from '../components/PageContentWrapper';
 import PageTitle from '../components/typography/PageTitle';
-// import GMaps from '../components/GMaps';
+import GMaps from '../components/GMaps';
+import { DEVICE } from '../assets/styles/const';
+
+const { lg } = DEVICE;
+
 const ContactInfoWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @media ${lg} {
+    margin: 3rem 0 0 0;
+  }
 `;
 
 const ContactItems = styled.div`
@@ -58,7 +62,8 @@ const Contact: React.FC = () => {
     <PageContentWrapper
       pageTitle={<PageTitle text="Contact" />}
       colLeftBody={renderContactInfos()}
-      // colRightBodyMobile={<GMaps />}
+      colRightBodyMobile={<GMaps />}
+      withMap
     />
   );
 };

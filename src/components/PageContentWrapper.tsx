@@ -11,6 +11,7 @@ interface Props {
   colLeftBody?: ReactNode;
   colRightBody?: ReactNode;
   colRightBodyMobile?: ReactNode;
+  withMap?: boolean;
 }
 
 const PageContentWrapper: React.FC<Props> = ({
@@ -18,13 +19,16 @@ const PageContentWrapper: React.FC<Props> = ({
   colLeftBody,
   colRightBody,
   colRightBodyMobile,
+  withMap,
 }) => {
   const ContentWrapper = styled.div`
     min-height: calc(100% - 10.5rem);
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: ${withMap && '305px'};
     @media ${lg} {
       grid-template-columns: ${colRightBodyMobile ? '1fr 2fr' : '1fr 1fr'};
+      grid-template-rows: ${withMap && 'initial'};
     }
   `;
 
@@ -45,10 +49,11 @@ const PageContentWrapper: React.FC<Props> = ({
   `;
 
   const ColRightMobile = styled.div`
-    margin: 5rem 0 0 0;
+    margin: ${withMap ? '0' : '5rem 0 0 0'};
 
     @media ${lg} {
       margin: 0;
+      padding: ${withMap && '0 0 0 3rem'};
     }
   `;
 
@@ -69,12 +74,14 @@ PageContentWrapper.propTypes = {
   colLeftBody: PropTypes.node,
   colRightBody: PropTypes.node,
   colRightBodyMobile: PropTypes.node,
+  withMap: PropTypes.bool,
 };
 
 PageContentWrapper.defaultProps = {
   colLeftBody: null,
   colRightBody: null,
   colRightBodyMobile: null,
+  withMap: false,
 };
 
 export default PageContentWrapper;

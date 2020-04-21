@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { /* VARIABLES, */ DEVICE } from '../../assets/styles/const';
+
+const { xl } = DEVICE;
 
 interface Props {
   text: string;
@@ -8,7 +11,11 @@ interface Props {
 
 const PageTitle: React.FC<Props> = ({ text }) => {
   const PageTitleWrapper = styled.div`
-    max-height: 175px;
+    max-height: 145px;
+
+    @media ${xl} {
+      max-height: 175px;
+    }
   `;
 
   const H1 = styled.h1`

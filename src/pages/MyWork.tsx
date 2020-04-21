@@ -6,18 +6,21 @@ import timeline from '../assets/images/timeline.png';
 import { works } from '../utils/works-data';
 import { DEVICE } from '../assets/styles/const';
 
-const { lg } = DEVICE;
+const { md, lg } = DEVICE;
 
 const TimelineWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 3rem 0 0 0;
+
+  @media ${lg} {
+    margin: 3rem 0 0 0;
+  }
 
   img {
     height: 6.5rem;
     width: auto;
 
-    @media ${lg} {
+    @media ${md} {
       height: 7.5rem;
     }
   }

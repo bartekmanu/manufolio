@@ -9,16 +9,16 @@ import { DEVICE } from '../assets/styles/const';
 const { lg, xl } = DEVICE;
 
 const SkillWrapper = styled.div`
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
 
   @media ${lg} {
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
   }
 
   @media ${xl} {
-    width: 60%;
+    /* width: 60%; */
   }
 `;
 

@@ -73,7 +73,7 @@ const MyWork: React.FC = () => {
     <PageContentWrapper
       pageTitle={<PageTitle text="My work" />}
       colLeftBody={renderTimeline()}
-      colRightBody={renderWorks()}
+      colRightBodyMobile={renderWorks()}
     />
   );
 };

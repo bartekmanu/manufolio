@@ -5,8 +5,13 @@ import { faEnvelopeOpen, faPhoneAlt, faMapMarkedAlt } from '@fortawesome/free-so
 import PageContentWrapper from '../components/PageContentWrapper';
 import PageTitle from '../components/typography/PageTitle';
 // import GMaps from '../components/GMaps';
+const ContactInfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
-const ContactItemsWrapper = styled.div`
+const ContactItems = styled.div`
   display: flex;
   color: var(--secondary-font-color);
   font-size: 1.5rem;
@@ -32,20 +37,20 @@ const ContactItemsWrapper = styled.div`
 const Contact: React.FC = () => {
   const renderContactInfos = (): JSX.Element => {
     return (
-      <div>
-        <ContactItemsWrapper>
+      <ContactInfoWrapper>
+        <ContactItems>
           <FontAwesomeIcon icon={faEnvelopeOpen} />
           <a href="mailto:manowski.b@gmail.com">manowski.b@gmail.com</a>
-        </ContactItemsWrapper>
-        <ContactItemsWrapper>
+        </ContactItems>
+        <ContactItems>
           <FontAwesomeIcon icon={faPhoneAlt} />
           <a href="tel:+48 790225013">+48 791 611 443</a>
-        </ContactItemsWrapper>
-        <ContactItemsWrapper>
+        </ContactItems>
+        <ContactItems>
           <FontAwesomeIcon icon={faMapMarkedAlt} />
           <span>Wrocław || Katowice</span>
-        </ContactItemsWrapper>
-      </div>
+        </ContactItems>
+      </ContactInfoWrapper>
     );
   };
 

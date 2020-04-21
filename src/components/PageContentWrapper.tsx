@@ -3,27 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { /* VARIABLES, */ DEVICE } from '../assets/styles/const';
 
-const { lg, xl, xxl } = DEVICE;
+const { lg, xl } = DEVICE;
 // const { pageImg, splashHeight } = VARIABLES;
-
-const ContentWrapper = styled.div`
-  @media ${lg} {
-  }
-`;
-
-const ColLeft = styled.div`
-  @media ${xxl} {
-  }
-`;
-
-const ColRight = styled.div`
-  display: none;
-  @media ${xl} {
-    display: block;
-  }
-`;
-
-const ColRightMobile = styled.div``;
 
 interface Props {
   pageTitle: ReactNode;
@@ -37,16 +18,44 @@ const PageContentWrapper: React.FC<Props> = ({
   colLeftBody,
   colRightBody,
   colRightBodyMobile,
-}) => (
-  <ContentWrapper>
-    <ColLeft>
-      {pageTitle}
-      {colLeftBody && colLeftBody}
-    </ColLeft>
-    {colRightBody && <ColRight>{colRightBody}</ColRight>}
-    {colRightBodyMobile && <ColRightMobile>{colRightBodyMobile}</ColRightMobile>}
-  </ContentWrapper>
-);
+}) => {
+  const ContentWrapper = styled.div`
+    min-height: calc(100% - 10.5rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    @media ${lg} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  `;
+
+  const ColLeft = styled.div`
+    padding: 0 2rem 0 2rem;
+    display: grid;
+    grid-template-rows: ${colLeftBody ? '175px 1fr' : '1fr'};
+    @media ${lg} {
+      padding: 0 0 0 3rem;
+    }
+  `;
+
+  const ColRight = styled.div`
+    display: none;
+    @media ${lg} {
+      display: block;
+    }
+  `;
+
+  const ColRightMobile = styled.div``;
+  return (
+    <ContentWrapper>
+      <ColLeft>
+        {pageTitle}
+        {colLeftBody && colLeftBody}
+      </ColLeft>
+      {colRightBody && <ColRight>{colRightBody}</ColRight>}
+      {colRightBodyMobile && <ColRightMobile>{colRightBodyMobile}</ColRightMobile>}
+    </ContentWrapper>
+  );
+};
 
 PageContentWrapper.propTypes = {
   pageTitle: PropTypes.node.isRequired,

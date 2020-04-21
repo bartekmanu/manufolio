@@ -4,18 +4,26 @@ import PageContentWrapper from '../components/PageContentWrapper';
 import PageTitle from '../components/typography/PageTitle';
 import Paragraph from '../components/typography/Paragraph';
 import photosplash from '../assets/images/photosplash.png';
-import { DEVICE } from '../assets/styles/const';
+import { VARIABLES, DEVICE } from '../assets/styles/const';
 
-const { xl, xxl } = DEVICE;
+const { xxl } = DEVICE;
+const { faceSplashWidth, faceSplashHeight } = VARIABLES;
 
 const About: React.FC = () => {
-  const AboutWrapper = styled.div`
-    @media ${xl} {
-      width: 80%;
-    }
+  const AboutWrapper = styled.div``;
+
+  const ImgWrapper = styled.div`
+    display: flex;
+    justify-content: flex-end;
+  `;
+
+  const Img = styled.img`
+    width: calc(${faceSplashWidth}rem - 10rem);
+    height: calc(${faceSplashHeight}rem - 13rem);
 
     @media ${xxl} {
-      width: 60%;
+      width: ${faceSplashWidth}rem;
+      height: ${faceSplashHeight}rem;
     }
   `;
 
@@ -42,7 +50,11 @@ const About: React.FC = () => {
     </AboutWrapper>
   );
 
-  const renderSplashImg = (): JSX.Element => <img src={photosplash} alt="main face with splash" />;
+  const renderSplashImg = (): JSX.Element => (
+    <ImgWrapper>
+      <Img src={photosplash} alt="main face with splash" />
+    </ImgWrapper>
+  );
 
   return (
     <PageContentWrapper

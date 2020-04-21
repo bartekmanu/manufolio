@@ -3,8 +3,8 @@ export const VARIABLES = {
   logoWidth: 5.625,
   logoHeight: 5,
   pageImg: 39.063,
-  splashWidth: 39.563,
-  splashHeight: 50.25,
+  faceSplashWidth: 39.563,
+  faceSplashHeight: 50.25,
 };
 
 const size = {

@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { DEVICE } from '../../assets/styles/const';
-
-const { xxl } = DEVICE;
 
 const P = styled.p`
   font-size: 1.35rem;
@@ -15,12 +12,6 @@ const P = styled.p`
     font-size: 2rem;
     color: var(--main-color);
   }
-
-  /* @media ${xxl} {
-    background: transparent;
-    border: none;
-    padding: 0;
-  } */
 `;
 
 interface Props {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { /* VARIABLES, */ DEVICE } from '../assets/styles/const';
 
-const { lg, xl } = DEVICE;
+const { lg } = DEVICE;
 // const { pageImg, splashHeight } = VARIABLES;
 
 interface Props {
@@ -24,7 +24,7 @@ const PageContentWrapper: React.FC<Props> = ({
     display: grid;
     grid-template-columns: 1fr;
     @media ${lg} {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: ${colRightBodyMobile ? '1fr 2fr' : '1fr 1fr'};
     }
   `;
 
@@ -44,7 +44,14 @@ const PageContentWrapper: React.FC<Props> = ({
     }
   `;
 
-  const ColRightMobile = styled.div``;
+  const ColRightMobile = styled.div`
+    margin: 5rem 0 0 0;
+
+    @media ${lg} {
+      margin: 0;
+    }
+  `;
+
   return (
     <ContentWrapper>
       <ColLeft>

@@ -7,6 +7,7 @@ const { lg } = DEVICE;
 const { sideBarWidth } = VARIABLES;
 
 const Wrapper = styled.div`
+  width: 100%;
   @media ${lg} {
     margin: 0 0 0 ${sideBarWidth}rem;
     width: calc(100% - ${sideBarWidth}rem);

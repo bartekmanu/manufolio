@@ -21,7 +21,6 @@ export const DEVICE = {
   lg: `(min-width: ${size.lg})`,
   xl: `(min-width: ${size.xl})`,
   xxl: `(min-width: ${size.xxl})`,
-  maXLg: `(max-width: ${size.lg})`,
 };
 
 export default {};

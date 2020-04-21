@@ -8,123 +8,49 @@ const { pageImg, splashHeight } = VARIABLES;
 
 const ContentWrapper = styled.div`
   @media ${lg} {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
   }
 `;
 
-const LeftSide = styled.div`
-  padding: 0 2rem 0 2rem;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-
+const ColLeft = styled.div`
   @media ${xxl} {
-    padding: 0 0 0 3rem;
   }
 `;
 
-const RightSide = styled.div`
-  display: none;
-  z-index: 1;
+const ColRight = styled.div`
   @media ${xl} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 `;
 
-const PageImg = styled.img`
-  height: ${pageImg}rem;
-  padding: 0 3rem 0 0;
-`;
-
-const SecondPageImg = styled.img`
-  height: ${splashHeight}rem;
-  position: absolute;
-  right: 0;
-  opacity: 0.2;
-
-  @media ${xxl} {
-    opacity: 1;
-    top: calc(50% - (${splashHeight}rem / 2));
-  }
-`;
-
-const PageBodyWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0 0 0;
-  height: 100%;
-  width: 100%;
-`;
-
-const PageRighSideWithMobile = styled.div`
-  background: red;
-  display: flex;
-`;
+const ColBody = styled.div``;
 
 interface Props {
   pageTitle: ReactNode;
-  pageBodyLeft?: ReactNode;
-  pageImgRight?: string;
-  pageImgAltRight?: string;
-  secondPageImgRight?: string;
-  secondPageImgAltRight?: string;
-  pageBodyRight?: ReactNode;
-  pageBodyRightMobile?: ReactNode;
+  colLeftBody?: ReactNode;
+  colRightBody?: ReactNode;
+  mobile?: boolean;
 }
 
-const PageContentWrapper: React.FC<Props> = ({
-  pageTitle,
-  pageBodyLeft,
-  pageImgRight,
-  pageImgAltRight,
-  secondPageImgRight,
-  secondPageImgAltRight,
-  pageBodyRight,
-  pageBodyRightMobile,
-}) => (
+const PageContentWrapper: React.FC<Props> = ({ pageTitle, colLeftBody, colRightBody, mobile }) => (
   <ContentWrapper>
-    <LeftSide>
+    <ColLeft>
       {pageTitle}
-      <>{pageBodyLeft ? <PageBodyWrapper>{pageBodyLeft}</PageBodyWrapper> : null}</>
-    </LeftSide>
-    <RightSide>
-      <>{pageImgRight ? <PageImg src={pageImgRight} alt={pageImgAltRight} /> : null}</>
-      {secondPageImgRight ? (
-        <SecondPageImg src={secondPageImgRight} alt={secondPageImgAltRight} />
-      ) : null}
-      <>{pageBodyRight ? <PageBodyWrapper>{pageBodyRight}</PageBodyWrapper> : null}</>
-    </RightSide>
-    {pageBodyRightMobile && (
-      <PageRighSideWithMobile>
-        <PageBodyWrapper>{pageBodyRightMobile}</PageBodyWrapper>
-      </PageRighSideWithMobile>
-    )}
+      {colLeftBody && colLeftBody}
+    </ColLeft>
+    <ColRight>{colRightBody && colRightBody}</ColRight>
   </ContentWrapper>
 );
 
 PageContentWrapper.propTypes = {
   pageTitle: PropTypes.node.isRequired,
-  pageBodyLeft: PropTypes.node,
-  pageImgRight: PropTypes.string,
-  pageImgAltRight: PropTypes.string,
-  secondPageImgRight: PropTypes.string,
-  secondPageImgAltRight: PropTypes.string,
-  pageBodyRight: PropTypes.node,
-  pageBodyRightMobile: PropTypes.node,
+  colLeftBody: PropTypes.node,
+  colRightBody: PropTypes.node,
+  mobile: PropTypes.bool,
 };
 
 PageContentWrapper.defaultProps = {
-  pageBodyLeft: null,
-  pageImgRight: '',
-  pageImgAltRight: '',
-  secondPageImgRight: '',
-  secondPageImgAltRight: '',
-  pageBodyRight: null,
-  pageBodyRightMobile: null,
+  colLeftBody: null,
+  colRightBody: null,
+  mobile: false,
 };
 
 export default PageContentWrapper;

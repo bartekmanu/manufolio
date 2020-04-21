@@ -39,12 +39,13 @@ const Skills: React.FC = () => {
     );
   };
 
+  const renderSplashImg = (): JSX.Element => <img src={graySplash} alt="gray splash" />;
+
   return (
     <PageContentWrapper
       pageTitle={<PageTitle text="Skills" />}
-      pageBodyLeft={renderSkillsLogo()}
-      secondPageImgRight={graySplash}
-      secondPageImgAltRight="gray-splash"
+      colLeftBody={renderSkillsLogo()}
+      colRightBody={renderSplashImg()}
     />
   );
 };

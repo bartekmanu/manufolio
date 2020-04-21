@@ -1,14 +1,11 @@
 import React from 'react';
 import PageContentWrapper from '../components/PageContentWrapper';
 import PageHomeTitle from '../components/typography/PageHomeTitle';
-import portfolioLogo from '../assets/images/logo-circle.png';
+import mainLogo from '../assets/images/logo-circle.png';
 
-const Home: React.FC = () => (
-  <PageContentWrapper
-    pageTitle={<PageHomeTitle />}
-    pageImgRight={portfolioLogo}
-    pageImgAltRight="portfolio-logo"
-  />
-);
+const Home: React.FC = () => {
+  const renderMainLogo = (): JSX.Element => <img src={mainLogo} alt="main page logo" />;
+  return <PageContentWrapper pageTitle={<PageHomeTitle />} colRightBody={renderMainLogo()} />;
+};
 
 export default Home;

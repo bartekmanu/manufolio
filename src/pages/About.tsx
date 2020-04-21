@@ -41,12 +41,14 @@ const About: React.FC = () => {
       </Paragraph>
     </AboutWrapper>
   );
+
+  const renderSplashImg = (): JSX.Element => <img src={photosplash} alt="main face with splash" />;
+
   return (
     <PageContentWrapper
       pageTitle={<PageTitle text="About" />}
-      pageBodyLeft={renderParagraph()}
-      secondPageImgRight={photosplash}
-      secondPageImgAltRight="photo with splash"
+      colLeftBody={renderParagraph()}
+      colRightBody={renderSplashImg()}
     />
   );
 };

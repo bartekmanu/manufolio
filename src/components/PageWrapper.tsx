@@ -8,13 +8,8 @@ const { sideBarWidth } = VARIABLES;
 
 const Wrapper = styled.div`
   @media ${lg} {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
     margin: 0 0 0 ${sideBarWidth}rem;
+    width: calc(100% - ${sideBarWidth}rem);
   }
 `;
 

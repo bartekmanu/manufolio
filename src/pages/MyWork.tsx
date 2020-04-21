@@ -6,22 +6,17 @@ import timeline from '../assets/images/timeline.png';
 import { works } from '../utils/works-data';
 
 const TimelineWrapper = styled.div`
-  display: flex;
-  width: 80%;
+  /* display: flex; */
+  /* width: 80%; */
 `;
 
-const WorksWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 100%;
-`;
+const WorksWrapper = styled.div``;
 
 const WorkItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(100% / 2);
+  /* width: calc(100% / 2); */
 
   a {
     text-decoration: none;
@@ -77,8 +72,8 @@ const MyWork: React.FC = () => {
   return (
     <PageContentWrapper
       pageTitle={<PageTitle text="My work" />}
-      pageBodyLeft={renderTimeline()}
-      pageBodyRightMobile={renderWorks()}
+      colLeftBody={renderTimeline()}
+      colRightBody={renderWorks()}
     />
   );
 };

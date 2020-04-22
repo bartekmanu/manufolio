@@ -24,11 +24,13 @@ const PageContentWrapper: React.FC<Props> = ({
     min-height: calc(100% - 10.5rem);
     display: grid;
     grid-template-columns: 1fr;
-    ${(props) => withMap && `grid-template-rows: 305px`};
+    ${(props): string | undefined => (withMap ? `grid-template-rows: 305px` : undefined)};
+
     @media ${lg} {
       grid-template-columns: 1fr 1fr;
-      ${(props) => colRightBodyMobile && `grid-template-columns: 1fr 2fr`};
-      ${(props) => withMap && `grid-template-rows: initial`};
+      ${(props): string | undefined =>
+        colRightBodyMobile ? `grid-template-columns: 1fr 2fr` : undefined};
+      ${(props): string | undefined => (withMap ? `grid-template-rows: initial` : undefined)};
     }
   `;
 
@@ -36,7 +38,7 @@ const PageContentWrapper: React.FC<Props> = ({
     padding: 0 2rem 0 2rem;
     display: grid;
     grid-template-rows: 1fr;
-    ${(props) => colLeftBody && `grid-template-rows: 175px 1fr`};
+    ${(props): string | undefined => (colLeftBody ? `grid-template-rows: 175px 1fr` : undefined)};
     @media ${lg} {
       padding: 0 0 0 3rem;
     }
@@ -51,11 +53,11 @@ const PageContentWrapper: React.FC<Props> = ({
 
   const ColRightMobile = styled.div`
     margin: 5rem 0 0 0;
-    ${(props) => withMap && `margin: 0`};
+    ${(props): string | undefined => (withMap ? `margin: 0` : undefined)};
 
     @media ${lg} {
       margin: 0;
-      ${(props) => withMap && `padding: 0 0 0 3rem`};
+      ${(props): string | undefined => (withMap ? `padding: 0 0 0 3rem` : undefined)};
     }
   `;
 

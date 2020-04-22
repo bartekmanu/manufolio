@@ -127,18 +127,21 @@ const App: React.FC = () => {
     right: 1rem;
     z-index: 150;
     font-size: 2rem;
+
+    @media ${lg} {
+      display: none;
+    }
   `;
 
-  const setSideBar = (): void =>
-    sideBarPosition ? setSideBarPosition(false) : setSideBarPosition(true);
+  const toggleSideBar = (): void => setSideBarPosition(!sideBarPosition);
 
-  const renderMenuBtn = (): JSX.Element => <MenuBtn onClick={setSideBar}>X</MenuBtn>;
+  const renderMenuBtn = (): JSX.Element => <MenuBtn onClick={toggleSideBar}>X</MenuBtn>;
 
   const renderMenuItems = (): JSX.Element[] => {
     return pages.map((item) => {
       return (
         <li key={item.slug}>
-          <Link to={item.address} onClick={setSideBar}>
+          <Link to={item.address} onClick={toggleSideBar}>
             {item.icon}
           </Link>
         </li>
@@ -166,7 +169,7 @@ const App: React.FC = () => {
       <MainPageWrapper>
         <SideBar>
           <NavWithLogo>
-            <Link to="/" onClick={setSideBar}>
+            <Link to="/" onClick={toggleSideBar}>
               <MenuLogo src={logo} />
             </Link>
           </NavWithLogo>

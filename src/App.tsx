@@ -42,7 +42,7 @@ const App: React.FC = () => {
     width: 100vw;
     height: 100vh;
     z-index: 10;
-    transform: translateX(${sideBarPosition ? '0' : '-100vw'});
+    transform: translateX(${(props): string => (sideBarPosition ? '0vw' : '-100vw')});
 
     @media ${lg} {
       background: transparent;

@@ -24,6 +24,54 @@ const { lg } = DEVICE;
 const App: React.FC = () => {
   const [sideBarPosition, setSideBarPosition] = useState(false);
 
+  const StyledBurger = styled.button`
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 15;
+    transition: all 1s;
+
+    &:focus {
+      outline: none;
+    }
+
+    div {
+      width: 2rem;
+      height: 0.25rem;
+      background: var(--main-color);
+      border-radius: 10px;
+      /* transition: all 0.3s linear; */
+      position: relative;
+      transform-origin: 1px;
+
+      :first-child {
+        transform: ${(props): string => (sideBarPosition ? 'rotate(45deg)' : 'rotate(0)')};
+      }
+
+      :nth-child(2) {
+        opacity: ${(props): string => (sideBarPosition ? '0' : '1')};
+        transform: ${(props): string => (sideBarPosition ? 'translateX(20px)' : 'translateX(0)')};
+      }
+
+      :nth-child(3) {
+        transform: ${(props): string => (sideBarPosition ? 'rotate(-45deg)' : 'rotate(0)')};
+      }
+    }
+
+    @media ${lg} {
+      display: none;
+    }
+  `;
+
   const MainPageWrapper = styled.div`
     display: flex;
     background: linear-gradient(90deg, var(--main-bg-color) -80%, var(--secondary-bg-color) 100%);
@@ -120,25 +168,23 @@ const App: React.FC = () => {
     }
   `;
 
-  const MenuBtn = styled.button`
-    /* TODO: */
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 150;
-    font-size: 2rem;
-  `;
+  const toggleSideBar = (): void => setSideBarPosition(!sideBarPosition);
 
-  const setSideBar = (): void =>
-    sideBarPosition ? setSideBarPosition(false) : setSideBarPosition(true);
-
-  const renderMenuBtn = (): JSX.Element => <MenuBtn onClick={setSideBar}>X</MenuBtn>;
+  const renderBurger = (): JSX.Element => {
+    return (
+      <StyledBurger onClick={toggleSideBar}>
+        <div />
+        <div />
+        <div />
+      </StyledBurger>
+    );
+  };
 
   const renderMenuItems = (): JSX.Element[] => {
     return pages.map((item) => {
       return (
         <li key={item.slug}>
-          <Link to={item.address} onClick={setSideBar}>
+          <Link to={item.address} onClick={toggleSideBar}>
             {item.icon}
           </Link>
         </li>
@@ -162,11 +208,11 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      {renderMenuBtn()}
+      {renderBurger()}
       <MainPageWrapper>
         <SideBar>
           <NavWithLogo>
-            <Link to="/" onClick={setSideBar}>
+            <Link to="/" onClick={toggleSideBar}>
               <MenuLogo src={logo} />
             </Link>
           </NavWithLogo>

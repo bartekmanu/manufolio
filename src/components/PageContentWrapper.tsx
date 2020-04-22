@@ -24,11 +24,11 @@ const PageContentWrapper: React.FC<Props> = ({
     min-height: calc(100% - 10.5rem);
     display: grid;
     grid-template-columns: 1fr;
-    ${withMap && `grid-template-rows: 305px`};
+    ${(props) => withMap && `grid-template-rows: 305px`};
     @media ${lg} {
       grid-template-columns: 1fr 1fr;
-      ${colRightBodyMobile && `grid-template-columns: 1fr 2fr`};
-      ${withMap && `grid-template-rows: initial`};
+      ${(props) => colRightBodyMobile && `grid-template-columns: 1fr 2fr`};
+      ${(props) => withMap && `grid-template-rows: initial`};
     }
   `;
 
@@ -36,7 +36,7 @@ const PageContentWrapper: React.FC<Props> = ({
     padding: 0 2rem 0 2rem;
     display: grid;
     grid-template-rows: 1fr;
-    ${colLeftBody && `grid-template-rows: 175px 1fr`};
+    ${(props) => colLeftBody && `grid-template-rows: 175px 1fr`};
     @media ${lg} {
       padding: 0 0 0 3rem;
     }
@@ -51,11 +51,11 @@ const PageContentWrapper: React.FC<Props> = ({
 
   const ColRightMobile = styled.div`
     margin: 5rem 0 0 0;
-    ${withMap && `margin: 0`};
+    ${(props) => withMap && `margin: 0`};
 
     @media ${lg} {
       margin: 0;
-      ${withMap && `padding: 0 0 0 3rem`};
+      ${(props) => withMap && `padding: 0 0 0 3rem`};
     }
   `;
 

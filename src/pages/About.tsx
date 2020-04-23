@@ -28,26 +28,25 @@ const About: React.FC = () => {
   `;
 
   const renderParagraph = (): JSX.Element => (
+    /*  */
     <AboutWrapper>
       <Paragraph>
-        I&apos;m Bartek. Privately, I&apos;m a beekeeper. I have a small apiary on the outskirts of
-        Wroclaw. Moreover I love downhill longboard, bouldering and terraristics.
+        Private, I am a beekeeper with an apiary on the outskirts of Wrocław where I live. I am
+        spending my free time on downhill longboard and bouldering workouts.
       </Paragraph>
       <Paragraph>
-        I started my adventure with programming in 2017. I took my first steps at MoreFromIT, where
-        I learned to work in a development team. There I also met modern technologies for creating
-        websites with the help of Vue.js. To this day I like this technology and I&apos;m happy to
-        come back to it. I created web applications based on mocks, provided by a team of graphic
-        designers, with care for Responsive Web Design using Vue.js, Nuxt.js and API. I was
-        developing two projects and consuting changes directly with the client. Implementation of
-        SEO processing tools.
+        My adventure with programming started in 2017. Now I am deep into modern frontend
+        technologies used for creating web applications like React Vue.JS, Nuxt and NunJucks. I
+        learned how work in teams in medium size software house company MoreFromIT. There I was
+        creating websites basing on mock-ups provided by graphics designers, everything was under
+        great project management. Some of advanced technical details I was consulting directly with
+        company&apos;s clients. The sites were created keeping in mind the main principles of SEO.
       </Paragraph>
       <Paragraph>
-        The next stage of my trip was working at TrustMate. As part of my work at this company, I
-        learned and deepened my knowledge in programming in React.js, Redux, Api, Twing and
-        Nunjucks. In addition, I implemented small graphic projects with the help of the FIGMA tool
-        for the needs of the currently implemented project. At this point I also learned the
-        methodology of work in SCRUM.
+        I became interested into the Single Page Applications, meanwhile changing work to the
+        TrustMate. There we were focused on the own project. I learned about useful tools for the
+        frontend like FIGMA, Swagger and Zeppelin. All the time I was working in two project
+        management methodologies, KANBAN and SCRUM.
       </Paragraph>
     </AboutWrapper>
   );

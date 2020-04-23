@@ -30,22 +30,24 @@ const About: React.FC = () => {
   const renderParagraph = (): JSX.Element => (
     <AboutWrapper>
       <Paragraph>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum doloremque accusamus id
-        error dolor a in perspiciatis! Iste aut nulla, ipsum labore saepe veniam necessitatibus,
-        ducimus odio molestiae non voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing
-        elit.
+        I&apos;m Bartek. Privately, I&apos;m a beekeeper. I have a small apiary on the outskirts of
+        Wroclaw. Moreover I love downhill longboard, bouldering and terraristics.
       </Paragraph>
       <Paragraph>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum doloremque accusamus id
-        error dolor a in perspiciatis! Iste aut nulla, ipsum labore saepe veniam necessitatibus,
-        ducimus odio molestiae non voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing
-        elit.
+        I started my adventure with programming in 2017. I took my first steps at MoreFromIT, where
+        I learned to work in a development team. There I also met modern technologies for creating
+        websites with the help of Vue.js. To this day I like this technology and I&apos;m happy to
+        come back to it. I created web applications based on mocks, provided by a team of graphic
+        designers, with care for Responsive Web Design using Vue.js, Nuxt.js and API. I was
+        developing two projects and consuting changes directly with the client. Implementation of
+        SEO processing tools.
       </Paragraph>
       <Paragraph>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum doloremque accusamus id
-        error dolor a in perspiciatis! Iste aut nulla, ipsum labore saepe veniam necessitatibus,
-        ducimus odio molestiae non voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing
-        elit.
+        The next stage of my trip was working at TrustMate. As part of my work at this company, I
+        learned and deepened my knowledge in programming in React.js, Redux, Api, Twing and
+        Nunjucks. In addition, I implemented small graphic projects with the help of the FIGMA tool
+        for the needs of the currently implemented project. At this point I also learned the
+        methodology of work in SCRUM.
       </Paragraph>
     </AboutWrapper>
   );
